@@ -30,19 +30,24 @@ import ProfilePage from "views/examples/ProfilePage.js";
 import LoginPage from "./views/examples/LoginPage";
 import Payment from "./views/Payment";
 import LoginPageMain from "./views/examples/LoginPageMain";
+import {AuthContextProvider} from "./context/AuthContext";
+import MyPdfView from "./views/examples/MyPdfView";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/components" element={<Index />} />
-      <Route path="/landing-page" element={<LandingPage />} />
-      <Route path="/register-page" element={<RegisterPage />} />
-      <Route path="/" element={<LoginPageMain />} />
-      <Route path="/payment-page" element={<Payment />} />
-      <Route path="/profile-page" element={<ProfilePage />} />
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
-  </BrowserRouter>
+    <AuthContextProvider>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/components" element={<Index />} />
+                <Route path="/landing-page" element={<LandingPage />} />
+                <Route path="/register-page" element={<RegisterPage />} />
+                <Route path="/" element={<LoginPageMain />} />
+                <Route path="/payment-page" element={<Payment />} />
+                <Route path="/profile-page" element={<ProfilePage />} />
+                <Route path="/pdf" element={<MyPdfView />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+        </BrowserRouter>
+    </AuthContextProvider>
 );

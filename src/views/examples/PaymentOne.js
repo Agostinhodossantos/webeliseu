@@ -25,6 +25,10 @@ import {
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import Footer from "components/Footer/Footer.js";
 import {Link, useNavigate} from "react-router-dom";
+import {getBaseUrl, getRandomNum, requestPay} from "../../utils/utils";
+import {UserAuth} from "../../context/AuthContext";
+import {setUser} from "../../data/providers";
+import axios from "axios";
 
 
 export default function PaymentOne() {
@@ -32,12 +36,43 @@ export default function PaymentOne() {
     const [emailFocus, setEmailFocus] = React.useState(false);
     const [passwordFocus, setPasswordFocus] = React.useState(false);
 
+    const [name, setName] = React.useState('');
+    const [phone, setPhone] = React.useState('');
+    const [isLoading, setIsLoading] = React.useState(false);
+
+    const { user } = UserAuth();
+
     const navigate = useNavigate();
 
+    const setUserData = async (name, phone) => {
+
+        const userData = {
+            uid: user.uid,
+            type: "unique",
+            status: "aproved",
+            price: 520,
+        }
+
+        await setUser(userData)
+    }
 
     const handleLogin = () => {
-        navigate('/', { replace: true });
+        setIsLoading(true)
+        requestPay(phone, 2).then((data) => {
+            if (data) {
+                setUserData(name, phone).then(r => {
+                    navigate("/pdf")
+                })
+            } else {
+                alert("Ocorreu um erro")
+            }
+            setIsLoading(false)
+        }).catch((error) => {
+            setIsLoading(false)
+            alert(error)
+        })
     }
+
 
     return (
         <div className="">
@@ -63,6 +98,10 @@ export default function PaymentOne() {
                                         <Input
                                             placeholder="Nome"
                                             type="text"
+                                            value={name}
+                                            onChange={(e)=>{
+                                                setName(e.target.value)
+                                            }}
                                             onFocus={(e) => setEmailFocus(true)}
                                             onBlur={(e) => setEmailFocus(false)}
                                         />
@@ -79,7 +118,11 @@ export default function PaymentOne() {
                                         </InputGroupAddon>
                                         <Input
                                             placeholder="Numero M-Pesa"
-                                            type="text"
+                                            type="number"
+                                            value={phone}
+                                            onChange={(e)=>{
+                                                setPhone(e.target.value)
+                                            }}
                                             onFocus={(e) => setPasswordFocus(true)}
                                             onBlur={(e) => setPasswordFocus(false)}
                                         />
@@ -90,6 +133,7 @@ export default function PaymentOne() {
                                 <Button onClick={handleLogin} className="btn-round" color="primary" size="lg">
                                     Proceder o Pagamento
                                 </Button>
+                                {isLoading && <p>Processando </p>}
                             </CardFooter>
                         </Card>
                     </Col>

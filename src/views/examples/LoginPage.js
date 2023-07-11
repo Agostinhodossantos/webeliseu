@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import classnames from "classnames";
 // reactstrap components
 import {
@@ -25,18 +25,39 @@ import {
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import Footer from "components/Footer/Footer.js";
 import {Link, useNavigate} from "react-router-dom";
+import {UserAuth} from "../../context/AuthContext";
 
 
 export default function LoginPage() {
-  const [fullNameFocus, setFullNameFocus] = React.useState(false);
+  const { user, loginWithEmail } = UserAuth();
+
   const [emailFocus, setEmailFocus] = React.useState(false);
   const [passwordFocus, setPasswordFocus] = React.useState(false);
 
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (user != null) {
+       navigate('/payment-page', { replace: true });
+    }
+  },[user])
 
-  const handleLogin = () => {
-    navigate('/payment-page', { replace: true });
+
+  const handleLogin = async () => {
+    if (email == '' || password == '') {
+      alert("Todos os campos devem ser preechidos")
+      return
+    }
+
+    try {
+      await loginWithEmail(email, password)
+    } catch (e) {
+      alert(e)
+      console.log(e)
+    }
   }
 
   return (
@@ -83,6 +104,10 @@ export default function LoginPage() {
                       <Input
                           placeholder="Email"
                           type="text"
+                          value={email}
+                          onChange={(e)=>{
+                            setEmail(e.target.value)
+                          }}
                           onFocus={(e) => setEmailFocus(true)}
                           onBlur={(e) => setEmailFocus(false)}
                       />
@@ -99,7 +124,11 @@ export default function LoginPage() {
                       </InputGroupAddon>
                       <Input
                           placeholder="Password"
-                          type="text"
+                          type="password"
+                          value={password}
+                          onChange={(e)=>{
+                            setPassword(e.target.value)
+                          }}
                           onFocus={(e) => setPasswordFocus(true)}
                           onBlur={(e) => setPasswordFocus(false)}
                       />

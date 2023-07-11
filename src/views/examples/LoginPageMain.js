@@ -36,8 +36,10 @@ import Examples from "views/IndexSections/Examples.js";
 import Download from "views/IndexSections/Download.js";
 import PageHeaderVideo from "../../components/PageHeader/PageHeaderVideo";
 import LoginPage from "./LoginPage";
+import {UserAuth} from "../../context/AuthContext";
 
 export default function LoginPageMain() {
+
     React.useEffect(() => {
         document.body.classList.toggle("index-page");
         // Specify how to clean up after this effect:

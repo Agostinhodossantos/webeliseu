@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/creativetimofficial/blk-design-system-react/issues"
   },
-  "homepage": "https://demos.creative-tim.com/blk-design-system-react/#/",
+  "homepage": "",
   "keywords": [
     "react",
     "reactjs",
@@ -35,10 +35,12 @@
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "14.0.0",
     "@testing-library/user-event": "14.4.3",
+    "axios": "^1.4.0",
     "bootstrap": "4.6.2",
     "chart.js": "2.9.4",
     "classnames": "2.3.1",
     "firebase": "^9.22.2",
+    "formik": "^2.4.2",
     "moment": "2.29.4",
     "nouislider": "15.4.0",
     "perfect-scrollbar": "1.5.5",
@@ -51,7 +53,9 @@
     "react-scripts": "5.0.1",
     "reactstrap": "8.10.0",
     "sass": "1.62.1",
-    "web-vitals": "3.3.1"
+    "short-uuid": "^4.2.2",
+    "web-vitals": "3.3.1",
+    "yup": "^1.2.0"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
@@ -93,7 +97,7 @@
       "last 1 safari version"
     ]
   },
-  "engines" : {
-    "node" : ">=16.0.0 <18.16.2"
+  "engines": {
+    "node": ">=16.0.0 <18.16.2"
   }
 }

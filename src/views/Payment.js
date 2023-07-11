@@ -15,7 +15,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 // core components
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
@@ -37,8 +37,17 @@ import Download from "views/IndexSections/Download.js";
 import PageHeaderVideo from "../components/PageHeader/PageHeaderVideo";
 import {Container} from "reactstrap";
 import CustomTab from "./IndexSections/CustomTab";
+import {UserAuth} from "../context/AuthContext";
+import {getUserByUid} from "../data/providers";
+import AcessButton from "./examples/AcessButton";
 
 export default function Payment() {
+
+    const { user } = UserAuth();
+    const [userData, setUserData] = useState(null)
+    const [isLoading, setIsLoading] = useState(true)
+    const [shouldAccess, setShouldAccess] = useState(false)
+
     React.useEffect(() => {
         window.scrollTo(0, 0)
         document.body.classList.toggle("index-page");
@@ -48,6 +57,22 @@ export default function Payment() {
         };
     }, []);
 
+    useEffect(()=> {
+        const current = getUserByUid(user.uid).then((data) => {
+            setUserData(data)
+
+            console.log(data)
+
+            if (data.status == "aproved") {
+                setShouldAccess(true)
+            }
+            setIsLoading(false)
+        }).catch((e) => {
+            setIsLoading(false)
+        })
+    },[user])
+
+
     return (
         <>
             <IndexNavbar />
@@ -55,7 +80,14 @@ export default function Payment() {
                 <PageHeader/>
                 <div className="main">
                     <NucleoIcons />
-                    <CustomTab/>
+                    {isLoading && (<> Carregando </>) }
+
+                    {isLoading == false && shouldAccess ? (
+                        <AcessButton/>
+                    ): (
+                        <CustomTab/>
+                    )}
+
                 </div>
                 <Footer />
             </div>
