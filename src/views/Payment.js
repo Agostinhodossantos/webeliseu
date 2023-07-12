@@ -58,6 +58,10 @@ export default function Payment() {
     }, []);
 
     useEffect(()=> {
+        if (user == null) {
+            return
+        }
+
         const current = getUserByUid(user.uid).then((data) => {
             setUserData(data)
 

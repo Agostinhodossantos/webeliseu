@@ -1,37 +1,26 @@
 import React from "react";
-import classnames from "classnames";
-// reactstrap components
+import {UserAuth} from "../../context/AuthContext";
+import {useNavigate} from "react-router-dom";
+import {setUser} from "../../data/providers";
+import {requestPay} from "../../utils/utils";
+import IndexNavbar from "../../components/Navbars/IndexNavbar";
 import {
     Button,
     Card,
-    CardHeader,
-    CardBody,
-    CardFooter,
-    CardImg,
-    CardTitle,
-    Label,
-    FormGroup,
-    Form,
-    Input,
-    InputGroupAddon,
-    InputGroupText,
-    InputGroup,
-    Container,
-    Row,
+    CardBody, CardFooter,
     Col,
+    Container,
+    Form, FormGroup,
+    Input,
+    InputGroup,
+    InputGroupAddon,
+    InputGroupText, Label,
+    Row
 } from "reactstrap";
-
-// core components
-import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
-import Footer from "components/Footer/Footer.js";
-import {Link, useNavigate} from "react-router-dom";
-import {UserAuth} from "../../context/AuthContext";
-import {setUser} from "../../data/providers";
-import {requestPay} from "../../utils/utils";
+import classnames from "classnames";
 
 
-export default function PaymentParcel() {
-
+export default function RegisterComp() {
     const [fullNameFocus, setFullNameFocus] = React.useState(false);
     const [emailFocus, setEmailFocus] = React.useState(false);
     const [passwordFocus, setPasswordFocus] = React.useState(false);
@@ -44,29 +33,27 @@ export default function PaymentParcel() {
 
     const navigate = useNavigate();
 
-    const setUserData = async (name, phone, stage) => {
+    const setUserData = async (name, phone) => {
 
         const userData = {
             uid: user.uid,
             type: "unique",
-            status: "pending",
-            stage: stage,
+            isPaidVideo: true,
             name: name,
             phone: phone,
-            isPaidVideo: false,
+            status: "pending",
             price: 520,
         }
 
         await setUser(userData)
     }
 
-    const handleLogin = () => {
+    const handlePayment = () => {
         setIsLoading(true)
-        requestPay(phone, 110, 1).then((data) => {
-            if (data) {
+        requestPay(phone, 2).then((data) => {
+            if (data == true) {
                 setUserData(name, phone).then(r => {
-                    alert("Pagamento feito com sucesso")
-                    // navigate("/pdf")
+                    navigate("/video")
                 })
             } else {
                 alert("Ocorreu um erro")
@@ -79,67 +66,44 @@ export default function PaymentParcel() {
     }
 
     return (
-        <div className="">
+        <>
+
             <Container>
 
                 <Row className="row-grid justify-content-between align-items-center">
-                    <Col className="mb-lg-auto" lg="12">
-
+                    <Col lg="6">
+                        <iframe width="100%" height="385" src="https://www.youtube.com/embed/38eoS5n5N3g"
+                                title="YouTube video player" frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen></iframe>
+                    </Col>
+                    <Col className="mb-lg-auto" lg="6">
                         <Card className="card-register">
 
+                            <h4 className="p-4">Preço: 8500Mt</h4>
                             <CardBody>
-                                <p>
-                                    Os pagamentos em prestações estão divididas em 3 partes:
-                                </p>
-
-                                <FormGroup check disabled>
-                                    <Label check>
-                                        <Input disabled type="checkbox" />
-                                        <span className="form-check-sign" />
-                                        3ª Prestação 205Mt
-                                    </Label>
-                                </FormGroup>
-
-                                <FormGroup check disabled>
-                                    <Label check>
-                                        <Input disabled type="checkbox" />
-                                        <span className="form-check-sign" />
-                                        2ª Prestação 205Mt
-                                    </Label>
-                                </FormGroup>
-
-                                <FormGroup check disabled>
-                                    <Label check>
-                                        <Input defaultChecked disabled type="checkbox" />
-                                        <span className="form-check-sign" />
-                                        1ª Prestação 110Mt
-                                    </Label>
-                                </FormGroup>
-
-                                <br/>
-
                                 <Form className="form">
                                     <InputGroup
                                         className={classnames({
-                                            "input-group-focus": emailFocus,
+                                            "input-group-focus": fullNameFocus,
                                         })}
                                     >
                                         <InputGroupAddon addonType="prepend">
                                             <InputGroupText>
-                                                <i className="tim-icons icon-email-85" />
+                                                <i className="tim-icons icon-single-02" />
                                             </InputGroupText>
                                         </InputGroupAddon>
                                         <Input
                                             placeholder="Nome"
-                                            type="text"
                                             value={name}
                                             onChange={(e)=>{
                                                 setName(e.target.value)
                                             }}
-                                            onFocus={(e) => setEmailFocus(true)}
-                                            onBlur={(e) => setEmailFocus(false)}
+                                            onFocus={(e) => setFullNameFocus(true)}
+                                            onBlur={(e) => setFullNameFocus(false)}
                                         />
                                     </InputGroup>
+
                                     <InputGroup
                                         className={classnames({
                                             "input-group-focus": passwordFocus,
@@ -151,8 +115,8 @@ export default function PaymentParcel() {
                                             </InputGroupText>
                                         </InputGroupAddon>
                                         <Input
-                                            placeholder="Numero M-Pesa"
-                                            type="text"
+                                            placeholder="Numero M-pesa"
+                                            type="number"
                                             value={phone}
                                             onChange={(e)=>{
                                                 setPhone(e.target.value)
@@ -161,13 +125,23 @@ export default function PaymentParcel() {
                                             onBlur={(e) => setPasswordFocus(false)}
                                         />
                                     </InputGroup>
+                                    <FormGroup check className="text-left">
+                                        <Label check>
+                                            <Input type="checkbox" />
+                                            <span className="form-check-sign" /> Eu concordo com os{" "}
+                                            <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                                                termos e Condições.
+                                            </a>
+                                            .
+                                        </Label>
+                                    </FormGroup>
                                 </Form>
                             </CardBody>
                             <CardFooter>
                                 {isLoading ? (
                                     <p>Processando</p>
                                 ): (
-                                    <Button onClick={handleLogin} className="btn-round" color="primary" size="lg">
+                                    <Button onClick={handlePayment} className="btn-round" color="primary" size="lg">
                                         Processar o Pagamento
                                     </Button>
                                 )}
@@ -176,6 +150,6 @@ export default function PaymentParcel() {
                     </Col>
                 </Row>
             </Container>
-        </div>
-    );
+        </>
+    )
 }

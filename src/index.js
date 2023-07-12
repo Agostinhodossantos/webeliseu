@@ -32,6 +32,7 @@ import Payment from "./views/Payment";
 import LoginPageMain from "./views/examples/LoginPageMain";
 import {AuthContextProvider} from "./context/AuthContext";
 import MyPdfView from "./views/examples/MyPdfView";
+import VideoCourse from "./views/examples/VideoCourse";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -46,6 +47,7 @@ root.render(
                 <Route path="/payment-page" element={<Payment />} />
                 <Route path="/profile-page" element={<ProfilePage />} />
                 <Route path="/pdf" element={<MyPdfView />} />
+                <Route path="/video" element={<VideoCourse />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
         </BrowserRouter>

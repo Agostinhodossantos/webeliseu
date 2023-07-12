@@ -36,6 +36,9 @@ export const requestPay = async (phone, amount) => {
 
     try {
         const response = await axios.post(getBaseUrl()+"c2b", data, config);
+        //TODO check response
+
+        console.log(response)
         return true
     } catch (error) {
         const my = await axios.post(getBaseUrl()+"query", data, config);

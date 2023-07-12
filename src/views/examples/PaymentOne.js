@@ -50,6 +50,9 @@ export default function PaymentOne() {
             uid: user.uid,
             type: "unique",
             status: "aproved",
+            name: name,
+            phone: phone,
+            isPaidVideo: false,
             price: 520,
         }
 
@@ -130,10 +133,13 @@ export default function PaymentOne() {
                                 </Form>
                             </CardBody>
                             <CardFooter>
-                                <Button onClick={handleLogin} className="btn-round" color="primary" size="lg">
-                                    Proceder o Pagamento
-                                </Button>
-                                {isLoading && <p>Processando </p>}
+                                {isLoading ? (
+                                    <p>Processando</p>
+                                ): (
+                                    <Button onClick={handleLogin} className="btn-round" color="primary" size="lg">
+                                        Processar o Pagamento
+                                    </Button>
+                                )}
                             </CardFooter>
                         </Card>
                     </Col>

@@ -37,6 +37,7 @@ import Download from "views/IndexSections/Download.js";
 import PageHeaderVideo from "../../components/PageHeader/PageHeaderVideo";
 import LoginPage from "./LoginPage";
 import {UserAuth} from "../../context/AuthContext";
+import {Col, Container, Row} from "reactstrap";
 
 export default function LoginPageMain() {
 
@@ -49,9 +50,24 @@ export default function LoginPageMain() {
     }, []);
     return (
         <>
+
+
             <IndexNavbar />
             <div className="wrapper">
-                <PageHeaderVideo />
+                <div className="section-nucleo-icons">
+                    <Container>
+                        <br/> <br/> <br/> <br/> <br/> <br/>
+                        <Row className="justify-content-center">
+                            <Col lg="8" md="12">
+                                <h2 className="title">Projecto meu negocio</h2>
+                                <h4 className="description">
+                                    Curso dos Quadros a Base de Madeira disponível!
+                                    Faça login com as credencias fornecidas apôs a sua inscrição e inicie com as aulas
+                                </h4>
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
                 <div className="main">
                     <LoginPage />
                 </div>
