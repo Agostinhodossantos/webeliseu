@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import classnames from "classnames";
 // reactstrap components
 import {
@@ -26,7 +26,7 @@ import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import Footer from "components/Footer/Footer.js";
 import {Link, useNavigate} from "react-router-dom";
 import {UserAuth} from "../../context/AuthContext";
-import {setUser} from "../../data/providers";
+import {getUserByUid, setUser} from "../../data/providers";
 import {requestPay} from "../../utils/utils";
 
 
@@ -39,22 +39,51 @@ export default function PaymentParcel() {
     const [name, setName] = React.useState('');
     const [phone, setPhone] = React.useState('');
     const [isLoading, setIsLoading] = React.useState(false);
+    const [payStage, setPayState] = React.useState(1);
 
     const { user } = UserAuth();
 
     const navigate = useNavigate();
 
-    const setUserData = async (name, phone, stage) => {
+    useEffect(()=> {
+        if (user == null) {
+            return
+        }
+
+        const current = getUserByUid(user.uid).then((data) => {
+
+            if (data != null) {
+
+                if (data.stage == 1) {
+                    setPayState(2)
+                } else if (data.stage == 2) {
+                    setPayState(3)
+                }
+
+            }
+
+        }).catch((e) => {
+            setIsLoading(false)
+        })
+    },[user])
+
+    const setUserData = async (name, phone, stage, price) => {
+
+        var payStatus = "pending"
+
+        if (stage == 3) {
+            payStatus = "aproved"
+        }
 
         const userData = {
             uid: user.uid,
             type: "unique",
-            status: "pending",
+            status: payStatus,
             stage: stage,
             name: name,
             phone: phone,
             isPaidVideo: false,
-            price: 520,
+            price: price,
         }
 
         await setUser(userData)
@@ -62,7 +91,18 @@ export default function PaymentParcel() {
 
     const handleLogin = () => {
         setIsLoading(true)
-        requestPay(phone, 110, 1).then((data) => {
+
+        var price = 110
+
+        if (payStage == 2) {
+            price = 205
+        } else if (payStage == 3) {
+            price = 205
+        } else {
+            price = 110
+        }
+
+        requestPay(phone, 110, payStage, price).then((data) => {
             if (data) {
                 setUserData(name, phone).then(r => {
                     alert("Pagamento feito com sucesso")
@@ -94,7 +134,7 @@ export default function PaymentParcel() {
 
                                 <FormGroup check disabled>
                                     <Label check>
-                                        <Input disabled type="checkbox" />
+                                        <Input disabled type="checkbox" checked={payStage >= 3} />
                                         <span className="form-check-sign" />
                                         3ª Prestação 205Mt
                                     </Label>
@@ -102,7 +142,7 @@ export default function PaymentParcel() {
 
                                 <FormGroup check disabled>
                                     <Label check>
-                                        <Input disabled type="checkbox" />
+                                        <Input disabled type="checkbox" checked={payStage >= 2} />
                                         <span className="form-check-sign" />
                                         2ª Prestação 205Mt
                                     </Label>
@@ -110,7 +150,7 @@ export default function PaymentParcel() {
 
                                 <FormGroup check disabled>
                                     <Label check>
-                                        <Input defaultChecked disabled type="checkbox" />
+                                        <Input disabled type="checkbox" checked={payStage >= 1} />
                                         <span className="form-check-sign" />
                                         1ª Prestação 110Mt
                                     </Label>

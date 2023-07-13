@@ -42,7 +42,7 @@ export default function RegisterComp() {
             name: name,
             phone: phone,
             status: "pending",
-            price: 520,
+            price: 8500,
         }
 
         await setUser(userData)
@@ -50,7 +50,7 @@ export default function RegisterComp() {
 
     const handlePayment = () => {
         setIsLoading(true)
-        requestPay(phone, 2).then((data) => {
+        requestPay(phone, 8500).then((data) => {
             if (data == true) {
                 setUserData(name, phone).then(r => {
                     navigate("/video")

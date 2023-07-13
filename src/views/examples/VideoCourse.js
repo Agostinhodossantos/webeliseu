@@ -44,7 +44,7 @@ export default function VideoCourse() {
         <div className="section">
             <Container>
                 <Row className="justify-content-center align-items-center">
-                    <ReactPlayer controls url='https://www.youtube.com/watch?v=HAYbZUL1Opc' />
+                    <ReactPlayer controls url='https://www.youtube.com/watch?v=QPfTn5kfuM' />
                 </Row>
             </Container>
         </div>

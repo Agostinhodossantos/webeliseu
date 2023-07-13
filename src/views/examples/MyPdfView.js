@@ -15,13 +15,16 @@ export default function MyPdfView() {
         setNumPages(numPages);
     }
     return (
-        <div>
-            <Document file={require("assets/ganhar.pdf")} onLoadSuccess={onDocumentLoadSuccess}>
-                <Page pageNumber={pageNumber} />
-            </Document>
-            <p>
-                Page {pageNumber} of {numPages}
-            </p>
+        <div className="section-full-screen">
+            {/*<Document file={require("assets/ganhar.pdf")} onLoadSuccess={onDocumentLoadSuccess}>*/}
+            {/*    <Page pageNumber={pageNumber} />*/}
+            {/*</Document>*/}
+            {/*<p>*/}
+            {/*    Page {pageNumber} of {numPages}*/}
+            {/*</p>*/}
+            <object data={require("assets/ganhar.pdf")} type="application/pdf" width="100%" height="500px">
+                <p>Unable to display PDF file. <a href={require("assets/ganhar.pdf")}>Download</a> instead.</p>
+            </object>
         </div>
     );
 }

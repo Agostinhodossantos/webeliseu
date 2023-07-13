@@ -61,7 +61,7 @@ export default function PaymentOne() {
 
     const handleLogin = () => {
         setIsLoading(true)
-        requestPay(phone, 2).then((data) => {
+        requestPay(phone, 520).then((data) => {
             if (data) {
                 setUserData(name, phone).then(r => {
                     navigate("/pdf")
@@ -75,7 +75,6 @@ export default function PaymentOne() {
             alert(error)
         })
     }
-
 
     return (
         <div className="">
