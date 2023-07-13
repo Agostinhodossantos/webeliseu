@@ -72,10 +72,9 @@ export default function RegisterComp() {
 
                 <Row className="row-grid justify-content-between align-items-center">
                     <Col lg="6">
-                        <iframe width="100%" height="385" src="https://www.youtube.com/embed/38eoS5n5N3g"
-                                title="YouTube video player" frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowFullScreen></iframe>
+                        
+
+                                    <iframe id="odysee-iframe" width="100%" height="385" src="https://odysee.com/$/embed/Introdução-Curso-dos-Quadros-a-Base-de-Madeira.PMN:6?r=5rfN4vejAU4DhaD8Z9aJDuLVr8HkmVWn&autoplay=true" allowfullscreen></iframe>
                     </Col>
                     <Col className="mb-lg-auto" lg="6">
                         <Card className="card-register">
