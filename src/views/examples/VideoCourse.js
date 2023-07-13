@@ -44,7 +44,9 @@ export default function VideoCourse() {
         <div className="section">
             <Container>
                 <Row className="justify-content-center align-items-center">
-                    <ReactPlayer controls url='https://www.youtube.com/watch?v=QPfTn5kfuM' />
+                    <iframe id="odysee-iframe" width="660" height="415"
+                            src="https://odysee.com/$/embed/Quadros-a-Base-de-Madeira.PMN:b?r=DZwHH8vVY35SRBgdtG4qE8oHabADiM6j&autoplay=true"
+                            allowFullScreen></iframe>
                 </Row>
             </Container>
         </div>

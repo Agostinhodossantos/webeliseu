@@ -74,24 +74,24 @@ export default function RegisterPage() {
         )}
 
         <br/> <br/>
-        <div className="section-nucleo-icons">
-          <Container>
-            <Row className="justify-content-center align-items-center">
-              <Col lg="8" md="12" className="justify-content-center">
-                <h4 className="description" color="red">
-                  Aprenda a Ganhar Dinheiro pela Internet através do Metical
-                </h4>
-                <Row className="justify-content-center align-items-center">
-                  <a href="/payment-page">
-                    <Button className="btn" color="warning" size="lg">
-                      Comecar agora
-                    </Button>
-                  </a>
-                </Row>
-              </Col>
-            </Row>
-          </Container>
-        </div>
+        {/*<div className="section-nucleo-icons">*/}
+        {/*  <Container>*/}
+        {/*    <Row className="justify-content-center align-items-center">*/}
+        {/*      <Col lg="8" md="12" className="justify-content-center">*/}
+        {/*        <h4 className="description" color="red">*/}
+        {/*          Aprenda a Ganhar Dinheiro pela Internet através do Metical*/}
+        {/*        </h4>*/}
+        {/*        <Row className="justify-content-center align-items-center">*/}
+        {/*          <a href="/payment-page">*/}
+        {/*            <Button className="btn" color="warning" size="lg">*/}
+        {/*              Comecar agora*/}
+        {/*            </Button>*/}
+        {/*          </a>*/}
+        {/*        </Row>*/}
+        {/*      </Col>*/}
+        {/*    </Row>*/}
+        {/*  </Container>*/}
+        {/*</div>*/}
       </div>
       </>
   );
