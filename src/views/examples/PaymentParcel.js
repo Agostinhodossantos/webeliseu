@@ -102,11 +102,15 @@ export default function PaymentParcel() {
             price = 110
         }
 
-        requestPay(phone, 110, payStage, price).then((data) => {
+        requestPay(phone, price ).then((data) => {
             if (data) {
-                setUserData(name, phone).then(r => {
+                setUserData(name, phone, payStage, price).then(r => {
                     alert("Pagamento feito com sucesso")
-                    // navigate("/pdf")
+
+                    if (payStage == 3) {
+                        navigate("/pdf")
+                    }
+
                 })
             } else {
                 alert("Ocorreu um erro")
