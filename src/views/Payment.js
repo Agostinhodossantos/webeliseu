@@ -40,6 +40,7 @@ import CustomTab from "./IndexSections/CustomTab";
 import {UserAuth} from "../context/AuthContext";
 import {getUserByUid} from "../data/providers";
 import AcessButton from "./examples/AcessButton";
+import CreateAcountPage from "./examples/CreateAcountPage";
 
 export default function Payment() {
 
@@ -84,12 +85,16 @@ export default function Payment() {
                 {/*<PageHeader/>*/}
                 <div className="main">
                     <NucleoIcons />
-                    {isLoading && (<> Carregando </>) }
-
                     {isLoading == false && shouldAccess ? (
                         <AcessButton/>
                     ): (
-                        <CustomTab/>
+                         <>
+                             {user == null || user == undefined ? (
+                                 <CreateAcountPage />
+                             ) : (
+                                 <CustomTab/>
+                             )}
+                         </>
                     )}
 
                 </div>
