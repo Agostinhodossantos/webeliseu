@@ -41,9 +41,9 @@ export default function IndexNavbar() {
   const [collapseOut, setCollapseOut] = React.useState("");
   const [color, setColor] = React.useState("navbar-transparent");
   React.useEffect(() => {
-    window.addEventListener("scroll", changeColor);
+   /// window.addEventListener("scroll", changeColor);
     return function cleanup() {
-      window.removeEventListener("scroll", changeColor);
+     /// window.removeEventListener("scroll", changeColor);
     };
   }, []);
   const changeColor = () => {

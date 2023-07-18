@@ -81,7 +81,7 @@ export default function Payment() {
         <>
             <IndexNavbar />
             <div className="wrapper">
-                <PageHeader/>
+                {/*<PageHeader/>*/}
                 <div className="main">
                     <NucleoIcons />
                     {isLoading && (<> Carregando </>) }

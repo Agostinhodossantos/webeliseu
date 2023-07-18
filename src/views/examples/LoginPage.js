@@ -41,7 +41,7 @@ export default function LoginPage() {
 
   useEffect(() => {
     if (user != null) {
-       navigate('/register-page', { replace: true });
+       // navigate('/register-page', { replace: true });
     }
   },[user])
 
@@ -65,9 +65,6 @@ export default function LoginPage() {
         <Container>
 
           <Row className="justify-content-center align-items-center">
-
-
-
             <Col className="mb-lg-auto" lg="6">
               <Card className="card-register">
 
