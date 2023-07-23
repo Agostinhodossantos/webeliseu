@@ -34,6 +34,8 @@ import {AuthContextProvider} from "./context/AuthContext";
 import MyPdfView from "./views/examples/MyPdfView";
 import VideoCourse from "./views/examples/VideoCourse";
 import CreateAcountPage from "./views/examples/CreateAcountPage";
+import PaymentEbook2 from "./views/examples/ebook2/PaymentEbook2";
+import PaymentFinalEbook2 from "./views/examples/ebook2/PaymentFinalEbook2";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -46,6 +48,8 @@ root.render(
                 <Route path="/register-page" element={<RegisterPage />} />
                 <Route path="/" element={<LoginPageMain />} />
                 <Route path="/payment-page" element={<Payment />} />
+                <Route path="/ebook" element={<PaymentEbook2 />} />
+                <Route path="/checkout" element={<PaymentFinalEbook2 />} />
                 <Route path="/profile-page" element={<ProfilePage />} />
                 <Route path="/pdf" element={<MyPdfView />} />
                 <Route path="/video" element={<VideoCourse />} />

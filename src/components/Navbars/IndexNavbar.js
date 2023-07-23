@@ -41,9 +41,9 @@ export default function IndexNavbar() {
   const [collapseOut, setCollapseOut] = React.useState("");
   const [color, setColor] = React.useState("navbar-transparent");
   React.useEffect(() => {
-   /// window.addEventListener("scroll", changeColor);
+      window.addEventListener("scroll", changeColor);
     return function cleanup() {
-     /// window.removeEventListener("scroll", changeColor);
+      window.removeEventListener("scroll", changeColor);
     };
   }, []);
   const changeColor = () => {
@@ -51,7 +51,7 @@ export default function IndexNavbar() {
       document.documentElement.scrollTop > 99 ||
       document.body.scrollTop > 99
     ) {
-      setColor("bg-info");
+      setColor("primary");
     } else if (
       document.documentElement.scrollTop < 100 ||
       document.body.scrollTop < 100

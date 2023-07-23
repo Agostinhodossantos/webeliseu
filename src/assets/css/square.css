@@ -1,0 +1,40 @@
+/* FourSquareGrid.css */
+
+.container {
+    margin-top: 50px;
+}
+
+.square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    margin: 10px;
+    padding-right: 4px;
+    padding-left: 4px;
+    border: 2px solid #ccc;
+    background-color: transparent; /* Transparent background */
+    color: red; /* Set text color */
+    font-size: 18px; /* Set text font size */
+    font-weight: bold; /* Set text font weight */
+}
+
+.square {
+    border-color: #f1b81e; /* Set your desired stroke color here */
+}
+
+.square-1 {
+    border-color: #f1b81e; /* Set your desired stroke color here */
+}
+
+.square-2 {
+    border-color: #0f0; /* Set your desired stroke color here */
+}
+
+.square-3 {
+    border-color: #00f; /* Set your desired stroke color here */
+}
+
+.square-4 {
+    border-color: #ff0; /* Set your desired stroke color here */
+}
