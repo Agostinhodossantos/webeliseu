@@ -103,31 +103,6 @@ export default function PaymentEbook2() {
                                             </Button>
                                         </a>
                                     </div>
-
-                                    <h4 className="description mt-2">
-                                        Você está pronto para abrir a porta para a
-                                        liberdade financeira? Apresentamos nosso guia
-                                        completo sobre como ganhar muito dinheiro
-                                        através de vários métodos online! Com nossas
-                                        instruções passo a passo e segredos internos,
-                                        você adquirirá as habilidades e os
-                                        conhecimentos necessários para começar a
-                                        obter uma renda estável por meio da Internet.
-                                    </h4>
-                                    <h4 className="description mt-2">
-                                        O conteúdo fornece a todos as habilidades e
-                                        conhecimentos necessários para começar a
-                                        ganhar uma renda estável através da internet
-                                        como eu faço. Este conteúdo irá sair do ar no
-                                        dia 04 de Agosto! Não perca tempo e Garanta o
-                                        seu E-book.
-                                    </h4>
-                                    <h4 className="description mt-2">
-                                        Prepare-se para transformar sua paixão em
-                                        lucro e tornar seus sonhos realidade. Não
-                                        espere mais um minuto - comece sua jornada
-                                        para a independência financeira hoje!
-                                    </h4>
                                 </Col>
                             </Row>
 

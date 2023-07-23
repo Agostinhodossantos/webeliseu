@@ -103,7 +103,7 @@ export default function LoginPageMain() {
 
 
 
-                <div className="section section-nucleo-icons">
+                <div className="">
                     <img alt="..." className="path" src={require("assets/img/path3.png")} />
                     <Container>
                         <Row className="justify-content-center">
@@ -121,7 +121,7 @@ export default function LoginPageMain() {
                             </Col>
 
                         </Row>
-                        <Row className="justify-content-center align-items-center">
+                        <Row className="justify-content-center align-items-center mt-3" >
                             <a href="/ebook">
                             <Button className="btn" color="warning" size="lg">
                                 Começar agora
