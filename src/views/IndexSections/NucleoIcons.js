@@ -27,9 +27,13 @@ export default function NucleoIcons() {
         <Row className="justify-content-center">
           <Col lg="8" md="12">
 
-            <h2 className="title">Aprenda a Ganhar Dinheiro pela Internt em metical!</h2>
+            <h2 className="title">Aprenda a Ganhar Dinheiro pela Internet em metical!</h2>
             <h4 className="description">
-              Os proximos segundos podem ser o ponto de partida para a mudança da sua vida  de uma vez por todas.  Este conteúdo foi desenvolvido para pessoas que desejam aprender como ganhar dinheiro  em metical como faço por meio de vários métodos online. O conteúdo  fornece a todos as habilidades e conhecimentos necessários para começar a ganhar uma renda estável através da internet como eu faço. Este conteúdo irá sair do ar em breve! Não perca tempo e Garanta o seu E-book.
+              Você está pronto para abrir a porta para a liberdade financeira? Apresentamos nosso guia completo sobre como ganhar muito dinheiro através de vários métodos online! Com nossas instruções passo a passo e segredos internos, você adquirirá as habilidades e os
+              conhecimentos necessários para começar a obter uma renda estável por meio da Internet. <br/> <br/>
+              O conteúdo fornece a todos as habilidades e conhecimentos necessários para começar a ganhar uma renda estável através da internet como eu faço. Este conteúdo irá sair do ar no dia 04 de Agosto! Não perca tempo e Garanta o seu E-book.
+              Prepare-se para transformar sua paixão em lucro e tornar seus sonhos realidade. <br/> Não espere mais um minuto - comece sua jornada para a independência financeira hoje!
+
             </h4>
             <div className="btn-wrapper">
               <img alt="..." src={require("assets/img/book.jpg")} />

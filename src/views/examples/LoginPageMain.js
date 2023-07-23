@@ -38,6 +38,7 @@ import PageHeaderVideo from "../../components/PageHeader/PageHeaderVideo";
 import LoginPage from "./LoginPage";
 import {UserAuth} from "../../context/AuthContext";
 import {Button, Col, Container, Row} from "reactstrap";
+import FourSquareGrid from "./FourSquare";
 
 export default function LoginPageMain() {
 
@@ -50,8 +51,6 @@ export default function LoginPageMain() {
     }, []);
     return (
         <>
-
-
             <IndexNavbar />
             <div className="wrapper">
                 <div className="section-nucleo-icons">
@@ -59,10 +58,13 @@ export default function LoginPageMain() {
                         <br/> <br/> <br/> <br/> <br/> <br/>
                         <Row className="justify-content-center">
                             <Col lg="8" md="12">
-                                <h2 className="title">Projecto meu negocio</h2>
-                                <h4 className="description">
+                                <h2 className="title">
                                     Curso dos Quadros a Base de Madeira disponível!
-                                    Faça login com as credencias fornecidas apôs a sua inscrição e inicie com as aulas
+                                </h2>
+                                <h4 className="description">
+                                    Duração do Curso 3 Meses – De 12 de Julho a 12 de Outubro <br/>
+                                    Faça login com as credencias fornecidas apôs a sua inscrição e inicie com as
+                                    aulas.
                                 </h4>
                             </Col>
                         </Row>
@@ -71,6 +73,8 @@ export default function LoginPageMain() {
                 <div className="main">
                     <LoginPage />
                 </div>
+
+
                 <div className="section section-nucleo-icons">
                     <img alt="..." className="path" src={require("assets/img/path3.png")} />
                     <Container>
@@ -78,25 +82,57 @@ export default function LoginPageMain() {
                             <Col lg="8" md="12">
 
                                 <h3 className="title">Aprenda a Ganhar Dinheiro pela Internt em Metical!</h3>
-                                {/*<h4 className="description">*/}
-                                {/*    Os proximos segundos podem ser o ponto de partida para a mudança da sua vida  de uma vez por todas.  Este conteúdo foi desenvolvido para pessoas que desejam aprender como ganhar dinheiro  em metical como faço por meio de vários métodos online. O conteúdo  fornece a todos as habilidades e conhecimentos necessários para começar a ganhar uma renda estável através da internet como eu faço. Este conteúdo irá sair do ar em breve! Não perca tempo e Garanta o seu E-book.*/}
-                                {/*</h4>*/}
+                                <h4 className="description">
+                                    E-book disponível – 18 de Julho a 04 de Agosto
+                                </h4>
                                 <div className="btn-wrapper">
                                     <img alt="..." src={require("assets/img/book.jpg")} />
                                 </div>
                             </Col>
 
                         </Row>
-                                <Row className="justify-content-center align-items-center">
-                                  <a href="/payment-page">
-                                    <Button className="btn" color="warning" size="lg">
-                                        Começar agora
-                                    </Button>
-                                  </a>
-                                </Row>
-
+                        <Row className="justify-content-center align-items-center">
+                            <a href="/payment-page">
+                            <Button className="btn" color="warning" size="lg">
+                                Começar agora
+                            </Button>
+                            </a>
+                        </Row>
                     </Container>
                 </div>
+
+
+
+                <div className="section section-nucleo-icons">
+                    <img alt="..." className="path" src={require("assets/img/path3.png")} />
+                    <Container>
+                        <Row className="justify-content-center">
+                            <Col lg="8" md="12">
+
+                                <h3 className="title">Descobrindo seu talento e usando-o para ganhar dinheiro</h3>
+                                <h4 className="description" style={{ color: "#efae08" }}>
+                                    Este E-book foi desenvolvido para ajudá-lo a identificar suas habilidades naturais e aproveitá-las para construir uma carreira de sucesso.
+                                    Você aprenderá como reconhecer seus talentos únicos, desenvolvê-los em habilidades comercializáveis e criar oportunidades para si mesmo em vários ramos. Ao final, você terá uma compreensão clara do seu talento, bem como um roteiro para alcançar seus resultados e usa-los para fazer dinheiro.
+                                </h4>
+
+                                <div className="btn-wrapper">
+                                    <FourSquareGrid/>
+                                </div>
+                            </Col>
+
+                        </Row>
+                        <Row className="justify-content-center align-items-center">
+                            <a href="/ebook">
+                            <Button className="btn" color="warning" size="lg">
+                                Começar agora
+                            </Button>
+                            </a>
+                        </Row>
+                    </Container>
+                </div>
+
+
+
             </div>
         </>
     );
