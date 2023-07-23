@@ -69,10 +69,10 @@ export default function LoginPageMain() {
                             </Col>
                         </Row>
                     </Container>
-                </div>
-                <div className="main">
+
                     <LoginPage />
                 </div>
+
 
 
                 <div className="section section-nucleo-icons">
@@ -109,7 +109,7 @@ export default function LoginPageMain() {
                         <Row className="justify-content-center">
                             <Col lg="8" md="12">
 
-                                <h3 className="title">Descobrindo seu talento e usando-o para ganhar dinheiro</h3>
+                                {/*<h3 className="title">Descobrindo seu talento e usando-o para ganhar dinheiro</h3>*/}
                                 {/*<h4 className="description" style={{ color: "#efae08" }}>*/}
                                 {/*    Este E-book foi desenvolvido para ajudá-lo a identificar suas habilidades naturais e aproveitá-las para construir uma carreira de sucesso.*/}
                                 {/*    Você aprenderá como reconhecer seus talentos únicos, desenvolvê-los em habilidades comercializáveis e criar oportunidades para si mesmo em vários ramos. Ao final, você terá uma compreensão clara do seu talento, bem como um roteiro para alcançar seus resultados e usa-los para fazer dinheiro.*/}

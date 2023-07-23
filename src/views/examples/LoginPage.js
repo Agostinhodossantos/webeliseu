@@ -61,7 +61,7 @@ export default function LoginPage() {
   }
 
   return (
-      <div className="section">
+      <div className="">
         <Container>
 
           <Row className="justify-content-center align-items-center">
