@@ -41,7 +41,7 @@ export default function LoginPage() {
 
   useEffect(() => {
     if (user != null) {
-       // navigate('/register-page', { replace: true });
+      navigate('/register-page', { replace: true });
     }
   },[user])
 
