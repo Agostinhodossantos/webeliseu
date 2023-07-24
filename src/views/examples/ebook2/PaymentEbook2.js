@@ -77,6 +77,21 @@ export default function PaymentEbook2() {
                                     <h2 className="title">Descobrindo seu talento e usando-o para ganhar dinheiro</h2>
 
                                     <h4 className="description mt-2">
+                                        Você está pronto para desbloquear seus talentos ocultos e
+                                        transformar sua vida? Com este e-book revolucionário, você
+                                        descobrirá suas habilidades únicas e as transformará em uma
+                                        carreira lucrativa. Prepare-se para embarcar em uma
+                                        emocionante jornada de autodescoberta, onde você
+                                        descobrirá seu potencial inexplorado e o aproveitará para
+                                        alcançar um sucesso sem precedentes. Seja você um
+                                        aspirante a artista, empresário ou profissional, nosso
+                                        conteúdo o capacitará a liberar seus verdadeiros talentos e
+                                        ganhar uma fortuna fazendo o que ama. Não desperdice
+                                        suas habilidades - aproveite esta incrível oportunidade e
+                                        comece a viver a vida dos seus sonhos!
+
+                                    </h4>
+                                    <h4 className="description mt-2">
                                         Desbloqueie seus talentos ocultos e libere todo o seu
                                         potencial, Descubra seu talento e ganhe muito dinheiro!
                                         Imagine uma vida em que você acorda todos os dias
