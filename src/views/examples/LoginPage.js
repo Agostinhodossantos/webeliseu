@@ -41,7 +41,7 @@ export default function LoginPage() {
 
   useEffect(() => {
     if (user != null) {
-      navigate('/register-page', { replace: true });
+      //navigate('/register-page', { replace: true });
     }
   },[user])
 
@@ -54,6 +54,7 @@ export default function LoginPage() {
 
     try {
       await loginWithEmail(email, password)
+      navigate('/register-page', { replace: true });
     } catch (e) {
       alert(e)
       console.log(e)
