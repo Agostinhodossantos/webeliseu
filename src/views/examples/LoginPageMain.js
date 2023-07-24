@@ -37,7 +37,7 @@ import Download from "views/IndexSections/Download.js";
 import PageHeaderVideo from "../../components/PageHeader/PageHeaderVideo";
 import LoginPage from "./LoginPage";
 import {UserAuth} from "../../context/AuthContext";
-import {Button, Col, Container, Row} from "reactstrap";
+import {Button, Card, Col, Container, Row} from "reactstrap";
 import FourSquareGrid from "./FourSquare";
 
 export default function LoginPageMain() {
@@ -86,7 +86,11 @@ export default function LoginPageMain() {
                                     E-book disponível – 18 de Julho a 04 de Agosto
                                 </h4>
                                 <div className="btn-wrapper">
-                                    <img alt="..." src={require("assets/img/book.jpg")} />
+                                    {/*<img alt="..." src={require("assets/img/book.jpg")} />*/}
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Y313Yurbqgs"
+                                            title="YouTube video player" frameBorder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowFullScreen></iframe>
                                 </div>
                             </Col>
 
