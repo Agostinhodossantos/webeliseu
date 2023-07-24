@@ -87,7 +87,7 @@ export default function LoginPageMain() {
                                 </h4>
                                 <div className="btn-wrapper">
                                     {/*<img alt="..." src={require("assets/img/book.jpg")} />*/}
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Y313Yurbqgs"
+                                    <iframe width="100%" height="415" src="https://www.youtube.com/embed/Y313Yurbqgs"
                                             title="YouTube video player" frameBorder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             allowFullScreen></iframe>
