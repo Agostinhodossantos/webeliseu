@@ -92,7 +92,7 @@ export default function PaymentParcelEbook2() {
         const handleLogin = () => {
             setIsLoading(true)
 
-            var price = 210
+            var price = 510
 
             // if (payStage == 2) {
             //     price = 2
@@ -140,15 +140,14 @@ export default function PaymentParcelEbook2() {
                                         <Label check>
                                             <Input disabled type="checkbox" checked={payStage >= 3} />
                                             <span className="form-check-sign" />
-                                            3ª Prestação 210Mt
+                                            3ª Prestação 510Mt
                                         </Label>
                                     </FormGroup>
-
                                     <FormGroup check disabled>
                                         <Label check>
                                             <Input disabled type="checkbox" checked={payStage >= 2} />
                                             <span className="form-check-sign" />
-                                            2ª Prestação 210Mt
+                                            2ª Prestação 510Mt
                                         </Label>
                                     </FormGroup>
 
@@ -156,7 +155,7 @@ export default function PaymentParcelEbook2() {
                                         <Label check>
                                             <Input disabled type="checkbox" checked={payStage >= 1} />
                                             <span className="form-check-sign" />
-                                            1ª Prestação 210Mt
+                                            1ª Prestação 510Mt
                                         </Label>
                                     </FormGroup>
 

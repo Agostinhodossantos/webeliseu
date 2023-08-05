@@ -52,7 +52,7 @@ export default function PaymentOne2() {
             book: 2,
             phone: phone,
             isPaidVideo: false,
-            price: 630,
+            price: 1500,
         }
 
         await setUser(userData)
@@ -60,7 +60,7 @@ export default function PaymentOne2() {
 
     const handleLogin = () => {
         setIsLoading(true)
-        requestPay(phone, 520).then((data) => {
+        requestPay(phone, 1500).then((data) => {
             if (data) {
                 setUserData(name, phone).then(r => {
                     navigate("/pdf")
@@ -83,7 +83,7 @@ export default function PaymentOne2() {
                     <Col className="mb-lg-auto" lg="12">
                         <Card className="card-register">
                             <CardBody>
-                                <h5>Preço: 630Mt</h5>
+                                <h5>Preço: 1500Mt</h5>
                                 <br/>
                                 <Form className="form">
                                     <InputGroup
