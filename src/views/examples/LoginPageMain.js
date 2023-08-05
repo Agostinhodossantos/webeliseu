@@ -83,7 +83,7 @@ export default function LoginPageMain() {
 
                                 <h3 className="title">Aprenda a Ganhar Dinheiro pela Internt em Metical!</h3>
                                 <h4 className="description">
-                                    E-book disponível – 18 de Julho a 04 de Agosto
+                                    E-book disponível - 05 de Agosto a 21 de Agosto
                                 </h4>
                                 <div className="btn-wrapper">
                                     {/*<img alt="..." src={require("assets/img/book.jpg")} />*/}
