@@ -94,13 +94,13 @@ export default function PaymentParcelEbook2() {
 
             var price = 510
 
-            // if (payStage == 2) {
-            //     price = 2
-            // } else if (payStage == 3) {
-            //     price = 205
-            // } else {
-            //     price = 110
-            // }
+            if (payStage == 2) {
+                price = 520
+            } else if (payStage == 3) {
+                price = 520
+            } else {
+                price = 510
+            }
 
             requestPay(phone, price ).then((data) => {
                 if (data) {
@@ -140,14 +140,14 @@ export default function PaymentParcelEbook2() {
                                         <Label check>
                                             <Input disabled type="checkbox" checked={payStage >= 3} />
                                             <span className="form-check-sign" />
-                                            3ª Prestação 510Mt
+                                            3ª Prestação 520Mt
                                         </Label>
                                     </FormGroup>
                                     <FormGroup check disabled>
                                         <Label check>
                                             <Input disabled type="checkbox" checked={payStage >= 2} />
                                             <span className="form-check-sign" />
-                                            2ª Prestação 510Mt
+                                            2ª Prestação 520Mt
                                         </Label>
                                     </FormGroup>
 
