@@ -87,11 +87,11 @@ export default function Payment() {
                         <AcessButton/>
                     ): (
                          <>
-                             {user == null || user == undefined ? (
-                                 <CreateAcountPage />
-                             ) : (
-                                 <CustomTab/>
-                             )}
+                             {/*{user == null || user == undefined ? (*/}
+                             {/*    <CreateAcountPage />*/}
+                             {/*) : (*/}
+                             {/*    <CustomTab/>*/}
+                             {/*)}*/}
                          </>
                     )}
                 </div>

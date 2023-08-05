@@ -66,13 +66,9 @@ export default function PaymentFinalEbook2() {
 
     return (
         <>
-            <IndexNavbar />
             <div className="wrapper">
                 {/*<PageHeader/>*/}
                 <div className="main">
-                    <div className="section section-nucleo-icons">
-
-                    </div>
                     <>
                         {user == null || user == undefined ? (
                             <CreateAcountPage />

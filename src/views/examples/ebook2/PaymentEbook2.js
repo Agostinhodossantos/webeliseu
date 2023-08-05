@@ -27,6 +27,7 @@ import CreateAcountPage from "../CreateAcountPage";
 import CustomTab from "../../IndexSections/CustomTab";
 import AcessButton from "../AcessButton";
 import {getUserByUid} from "../../../data/providers";
+import PaymentFinalEbook2 from "./PaymentFinalEbook2";
 
 export default function PaymentEbook2() {
 
@@ -106,28 +107,29 @@ export default function PaymentEbook2() {
                                         de alegria, realização e abundância financeira. Não sonhe
                                         apenas com o sucesso, torne-o realidade.
                                     </h4>
-                                    <h4 className="description mt-2">
-                                        Este e-book custará 1,550Mt, mas você pode reservar por
-                                        apenas 600Mt e cebe-lo no dia 05 de Agosto que estará
-                                        disponível.
-                                    </h4>
-                                    <div className="btn-wrapper">
-                                        <a href="/checkout">
-                                            <Button className="btn" color="warning" size="lg">
-                                                Reservar
-                                            </Button>
-                                        </a>
-                                    </div>
+                                    {/*<h4 className="description mt-2">*/}
+                                    {/*    Este e-book custará 1,550Mt, mas você pode reservar por*/}
+                                    {/*    apenas 600Mt e cebe-lo no dia 05 de Agosto que estará*/}
+                                    {/*    disponível.*/}
+                                    {/*</h4>*/}
+                                    {/*<div className="btn-wrapper">*/}
+                                    {/*    <a href="/checkout">*/}
+                                    {/*        <Button className="btn" color="warning" size="lg">*/}
+                                    {/*            Reservar*/}
+                                    {/*        </Button>*/}
+                                    {/*    </a>*/}
+                                    {/*</div>*/}
+
                                 </Col>
                             </Row>
 
                         </Container>
                     </div>
-                    {/*{isLoading == false && shouldAccess ? (*/}
-                    {/*    <AcessButton/>*/}
-                    {/*): (*/}
-                    {/*   */}
-                    {/*)}*/}
+                    {isLoading == false && shouldAccess ? (
+                        <AcessButton/>
+                    ): (
+                        <PaymentFinalEbook2 />
+                    )}
                 </div>
             </div>
         </>

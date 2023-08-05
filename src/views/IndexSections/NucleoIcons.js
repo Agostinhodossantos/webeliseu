@@ -38,6 +38,9 @@ export default function NucleoIcons() {
             <div className="btn-wrapper">
               <img alt="..." src={require("assets/img/book.jpg")} />
             </div>
+            <h4 className="description" style={{ color: '#FF7A00' }}>
+              Eu Avisei! Você chegou tarde, e o seu tempo acabou. Infelizmente o ebook onde ensino os 4 Passos para iniciar a ganhar dinheiro na internet em metical está definitivamente indisponível. Talvez eu possa trazê-lo de volta, talvez. Algumas oportunidades aparecem uma vez e nunca voltam
+            </h4>
           </Col>
         </Row>
 
