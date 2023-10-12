@@ -59,86 +59,15 @@ export default function LoginPageMain() {
                         <Row className="justify-content-center">
                             <Col lg="8" md="12">
                                 <h2 className="title">
-                                    Curso dos Quadros a Base de Madeira disponível!
+                                    Curso dos Quadros a Base de Madeira!
                                 </h2>
                                 <h4 className="description">
-                                    Duração do Curso 3 Meses – De 12 de Julho a 12 de Outubro <br/>
-                                    Faça login com as credencias fornecidas apôs a sua inscrição e inicie com as
-                                    aulas.
+                                Agradecemos a todos que se inscreveram no nosso  Curso dos Quadros a Base de Madeira! As inscrições para esta edição estão oficialmente encerradas
                                 </h4>
                             </Col>
                         </Row>
                     </Container>
-
-                    <LoginPage />
                 </div>
-
-
-
-                <div className="section section-nucleo-icons">
-                    <img alt="..." className="path" src={require("assets/img/path3.png")} />
-                    <Container>
-                        <Row className="justify-content-center">
-                            <Col lg="8" md="12">
-
-                                <h3 className="title">Aprenda a Ganhar Dinheiro pela Internt em Metical!</h3>
-                                <h4 className="description">
-                                    E-book disponível - 05 de Agosto a 21 de Agosto
-                                </h4>
-                                <div className="btn-wrapper">
-                                    {/*<img alt="..." src={require("assets/img/book.jpg")} />*/}
-                                    <iframe width="100%" height="415" src="https://www.youtube.com/embed/Y313Yurbqgs"
-                                            title="YouTube video player" frameBorder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            allowFullScreen></iframe>
-                                </div>
-                            </Col>
-
-                        </Row>
-                        <Row className="justify-content-center align-items-center">
-                            <a href="/payment-page">
-                            <Button className="btn" color="warning" size="lg">
-                                Começar agora
-                            </Button>
-                            </a>
-                        </Row>
-                    </Container>
-                </div>
-
-
-
-                <div className="">
-                    <img alt="..." className="path" src={require("assets/img/path3.png")} />
-                    <Container>
-                        <Row className="justify-content-center">
-                            <Col lg="8" md="12">
-
-                                {/*<h3 className="title">Descobrindo seu talento e usando-o para ganhar dinheiro</h3>*/}
-                                {/*<h4 className="description" style={{ color: "#efae08" }}>*/}
-                                {/*    Este E-book foi desenvolvido para ajudá-lo a identificar suas habilidades naturais e aproveitá-las para construir uma carreira de sucesso.*/}
-                                {/*    Você aprenderá como reconhecer seus talentos únicos, desenvolvê-los em habilidades comercializáveis e criar oportunidades para si mesmo em vários ramos. Ao final, você terá uma compreensão clara do seu talento, bem como um roteiro para alcançar seus resultados e usa-los para fazer dinheiro.*/}
-                                {/*</h4>*/}
-
-                                <div className="btn-wrapper">
-                                    {/*<img alt="..." src={require("assets/img/Descobrindo.png")} />*/}
-                                    <iframe width="100%" height="415" src="https://www.youtube.com/embed/vMtVRxvlvys"
-                                            title="YouTube video player" frameBorder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            allowFullScreen></iframe>
-                                </div>
-                            </Col>
-
-                        </Row>
-                        <Row className="justify-content-center align-items-center mt-3" >
-                            <a href="/ebook">
-                            <Button className="btn" color="warning" size="lg">
-                                Começar agora
-                            </Button>
-                            </a>
-                        </Row>
-                    </Container>
-                </div>
-
 
 
             </div>
