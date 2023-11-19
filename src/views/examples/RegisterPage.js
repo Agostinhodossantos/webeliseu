@@ -48,7 +48,7 @@ export default function RegisterPage() {
     console.log("ID: "+id)
     if (id == 1) {
       setCourse({
-        price: 1, //5198
+        price: 5198, //
         name: "Curso completo",
         id: 1
       })
