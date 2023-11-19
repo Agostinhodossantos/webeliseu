@@ -136,31 +136,6 @@ export default function PaymentParcelEbook2() {
                                         Os pagamentos em prestações estão divididas em 3 partes:
                                     </p>
 
-                                    <FormGroup check disabled>
-                                        <Label check>
-                                            <Input disabled type="checkbox" checked={payStage >= 3} />
-                                            <span className="form-check-sign" />
-                                            3ª Prestação 520Mt
-                                        </Label>
-                                    </FormGroup>
-                                    <FormGroup check disabled>
-                                        <Label check>
-                                            <Input disabled type="checkbox" checked={payStage >= 2} />
-                                            <span className="form-check-sign" />
-                                            2ª Prestação 520Mt
-                                        </Label>
-                                    </FormGroup>
-
-                                    <FormGroup check disabled>
-                                        <Label check>
-                                            <Input disabled type="checkbox" checked={payStage >= 1} />
-                                            <span className="form-check-sign" />
-                                            1ª Prestação 510Mt
-                                        </Label>
-                                    </FormGroup>
-
-                                    <br/>
-
                                     <Form className="form">
                                         <InputGroup
                                             className={classnames({

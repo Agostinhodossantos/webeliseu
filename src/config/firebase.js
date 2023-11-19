@@ -5,13 +5,13 @@ import { getStorage} from 'firebase/storage';
 import { getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCQ1COMR2nDkFUzsEYANTZrz1g7j0Uwq0o",
-    authDomain: "eliseu-game.firebaseapp.com",
-    projectId: "eliseu-game",
-    storageBucket: "eliseu-game.appspot.com",
-    messagingSenderId: "206518276586",
-    appId: "1:206518276586:web:d3d491d9dc0e63efc72293",
-    measurementId: "G-B6E7R5ZSKQ"
+    apiKey: "AIzaSyAa_8lbw7dxz9KDXOeHjZHLJ7oooFpJ1N0",
+    authDomain: "cursos-7115e.firebaseapp.com",
+    projectId: "cursos-7115e",
+    storageBucket: "cursos-7115e.appspot.com",
+    messagingSenderId: "117711318688",
+    appId: "1:117711318688:web:8fdabf1f45a7567c5ea3c5",
+    measurementId: "G-9MJJ69DBFV"
 };
 
 // Initialize Firebase

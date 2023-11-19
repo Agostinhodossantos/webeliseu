@@ -24,7 +24,7 @@ import {
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import Footer from "components/Footer/Footer.js";
-import {Link, useNavigate} from "react-router-dom";
+import {Link, useNavigate, useParams} from "react-router-dom";
 import IndexNavbar from "../../components/Navbars/IndexNavbar";
 import {UserAuth} from "../../context/AuthContext";
 import {getUserByUid, setUser} from "../../data/providers";
@@ -33,6 +33,7 @@ import RegisterComp from "./RegisterComp";
 import AcessButton from "./AcessButton";
 import CustomTab from "../IndexSections/CustomTab";
 import VideoCourse from "./VideoCourse";
+import PaymentFinalEbook2 from "./ebook2/PaymentFinalEbook2";
 
 export default function RegisterPage() {
 
@@ -40,6 +41,44 @@ export default function RegisterPage() {
   const [userData, setUserData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const [shouldAccess, setShouldAccess] = useState(false)
+  const [course, setCourse] = React.useState({name: "Curso", price: 10, id: -1});
+  const { id } = useParams();
+
+  const updateCourse = () => {
+    console.log("ID: "+id)
+    if (id == 1) {
+      setCourse({
+        price: 1, //5198
+        name: "Curso completo",
+        id: 1
+      })
+
+    } else if (id == 2) {
+      setCourse({
+        price: 2599,
+        name: "Módulo 01",
+        id: 2
+      })
+    } else if (id == 3) {
+      setCourse({
+        price: 599,
+        name: "Curso de Chaveiros a Base de Madeira",
+        id: 3
+      })
+    } else {
+      setCourse({
+        price: 599,
+        name: "Curso de Chaveiros a Base de Madeira",
+        id: 3
+      })
+    }
+  };
+
+  useEffect(() => {
+
+    updateCourse()
+  }, [id])
+
 
   useEffect(()=> {
     if (user == null) {
@@ -63,36 +102,23 @@ export default function RegisterPage() {
   return (
       <>
         <IndexNavbar />
+        <div className="wrapper">
+          {/*<PageHeader/>*/}
+          <div className="main">
+            <div className="section section-nucleo-icons">
+              <img alt="..." className="path" src={require("assets/img/path3.png")} />
+              <Container>
 
-        <br/> <br/>
-      <div className="section section-signup">
 
-        {isLoading == false && shouldAccess ? (
-            <VideoCourse/>
-        ): (
-            <RegisterComp/>
-        )}
-
-        <br/> <br/>
-        {/*<div className="section-nucleo-icons">*/}
-        {/*  <Container>*/}
-        {/*    <Row className="justify-content-center align-items-center">*/}
-        {/*      <Col lg="8" md="12" className="justify-content-center">*/}
-        {/*        <h4 className="description" color="red">*/}
-        {/*          Aprenda a Ganhar Dinheiro pela Internet através do Metical*/}
-        {/*        </h4>*/}
-        {/*        <Row className="justify-content-center align-items-center">*/}
-        {/*          <a href="/payment-page">*/}
-        {/*            <Button className="btn" color="warning" size="lg">*/}
-        {/*              Comecar agora*/}
-        {/*            </Button>*/}
-        {/*          </a>*/}
-        {/*        </Row>*/}
-        {/*      </Col>*/}
-        {/*    </Row>*/}
-        {/*  </Container>*/}
-        {/*</div>*/}
-      </div>
+              </Container>
+            </div>
+            {isLoading == false && shouldAccess ? (
+                <AcessButton/>
+            ): (
+                <RegisterComp course={course} />
+            )}
+          </div>
+        </div>
       </>
   );
 }

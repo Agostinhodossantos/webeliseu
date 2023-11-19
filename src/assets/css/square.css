@@ -38,3 +38,8 @@
 .square-4 {
     border-color: #ff0; /* Set your desired stroke color here */
 }
+
+.cover-image {
+    max-width: 80%;
+    margin-top: 3rem;
+}
