@@ -136,22 +136,22 @@ export default function LoginPage() {
                 </CardFooter>
               </Card>
             </Col>
-            <div className="section-nucleo-icons">
-              <Container>
-                <Row className="justify-content-center align-items-center">
-                  <Col lg="8" md="12" className="justify-content-center">
-                    <h4 className="description">
-                      Se você não possui credências, clique no link abaixo para fazer a sua inscrição e em seguida irá recber as credencias para ter acesso ao curso.
-                    </h4>
-                    <Row className="justify-content-center align-items-center">
-                      <a href="https://tranquil-torte-647ed0.netlify.app">
-                        Fazer inscrição
-                      </a>
-                    </Row>
-                  </Col>
-                </Row>
-              </Container>
-            </div>
+            {/*<div className="section-nucleo-icons">*/}
+            {/*  <Container>*/}
+            {/*    <Row className="justify-content-center align-items-center">*/}
+            {/*      <Col lg="8" md="12" className="justify-content-center">*/}
+            {/*        <h4 className="description">*/}
+            {/*          Se você não possui credências, clique no link abaixo para fazer a sua inscrição e em seguida irá recber as credencias para ter acesso ao curso.*/}
+            {/*        </h4>*/}
+            {/*        <Row className="justify-content-center align-items-center">*/}
+            {/*          <a href="https://tranquil-torte-647ed0.netlify.app">*/}
+            {/*            Fazer inscrição*/}
+            {/*          </a>*/}
+            {/*        </Row>*/}
+            {/*      </Col>*/}
+            {/*    </Row>*/}
+            {/*  </Container>*/}
+            {/*</div>*/}
           </Row>
         </Container>
       </div>

@@ -157,6 +157,18 @@ export default function IndexNavbar() {
                 <p className="d-lg-none d-xl-none">Instagram</p>
               </NavLink>
             </NavItem>
+            <NavItem className="p-0">
+              <NavLink
+                data-placement="bottom"
+                href="/login"
+                rel="noopener noreferrer"
+                target="_blank"
+                title="Follow us on Instagram"
+              >
+                <i className="fab fa-lock" />
+                <p className="d-lg-none d-xl-none">Login</p>
+              </NavLink>
+            </NavItem>
           </Nav>
         </Collapse>
       </Container>
