@@ -37,6 +37,7 @@ import CreateAcountPage from "./views/examples/CreateAcountPage";
 import PaymentEbook2 from "./views/examples/ebook2/PaymentEbook2";
 import PaymentFinalEbook2 from "./views/examples/ebook2/PaymentFinalEbook2";
 import ModulesPage from "./views/examples/Modules";
+import RegisterPageFree from "./views/examples/RegisterPageFree";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -47,6 +48,7 @@ root.render(
                 <Route path="/components" element={<Index />} />
                 <Route path="/landing-page" element={<LandingPage />} />
                 <Route path="/register-page/:id" element={<RegisterPage />} />
+                <Route path="/register-page/free/:id" element={<RegisterPageFree />} />
                 <Route path="/" element={<LoginPageMain />} />
                 <Route path="/modules" element={<ModulesPage />} />
                 <Route path="/payment-page" element={<Payment />} />
@@ -55,6 +57,7 @@ root.render(
                 <Route path="/profile-page" element={<ProfilePage />} />
                 <Route path="/pdf" element={<MyPdfView />} />
                 <Route path="/video" element={<VideoCourse />} />
+                <Route path="/register" element={<CreateAcountPage />} />
                 <Route path="/register" element={<CreateAcountPage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="*" element={<Navigate to="/" replace />} />

@@ -58,12 +58,16 @@ export default function LoginPageMain() {
             return
         }
 
-        const current = getUserByUid(user.uid).then((data) => {
-            setUserData(data)
+       try {
+           const current = getUserByUid(user.uid).then((data) => {
+               setUserData(data)
 
-            console.log(data)
-        }).catch((e) => {
-        })
+               console.log(data)
+           }).catch((e) => {
+           })
+       } catch (e) {
+           
+       }
     },[user])
 
 

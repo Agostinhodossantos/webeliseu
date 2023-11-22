@@ -51,7 +51,7 @@ export default function RegisterComp({course}) {
         await setUser(userData)
     }
 
-    const handlePayment = () => {
+    const handlePayment = async () => {
 
         if (password.length < 6) {
             alert("Password deve ter mais de 6 digitos")
@@ -59,23 +59,34 @@ export default function RegisterComp({course}) {
         }
 
         setIsLoading(true)
-        requestPay(phone, course.price).then(async (data) => {
-            if (data == true) {
 
-                const result = await authWithEmail(email, password)
-                const current = result.user;
+        if (course.price == 1) {
+            const result = await authWithEmail(email, password)
+            const current = result.user;
 
-                setUserData(current.uid).then(r => {
-                    navigate("/video")
-                })
-            } else {
-                alert("Ocorreu um erro")
-            }
-            setIsLoading(false)
-        }).catch((error) => {
-            setIsLoading(false)
-            alert(error)
-        })
+            setUserData(current.uid).then(r => {
+                navigate("/video")
+            })
+        } else {
+            requestPay(phone, course.price).then(async (data) => {
+                if (data == true) {
+
+                    const result = await authWithEmail(email, password)
+                    const current = result.user;
+
+                    setUserData(current.uid).then(r => {
+                        navigate("/video")
+                    })
+                } else {
+                    alert("Ocorreu um erro")
+                }
+                setIsLoading(false)
+            }).catch((error) => {
+                setIsLoading(false)
+                alert(error)
+            })
+        }
+
     }
 
     return (
@@ -88,7 +99,8 @@ export default function RegisterComp({course}) {
 
                             <Card className="card-register">
 
-                                <h4 className="p-4">Preço: {course.price}</h4>
+                                <h4 className="p-4">Preço: {course.price},  {course.name}</h4>
+
                                 <CardBody>
                                     <Form className="form">
                                         <InputGroup

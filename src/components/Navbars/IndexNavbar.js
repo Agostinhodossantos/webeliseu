@@ -165,7 +165,7 @@ export default function IndexNavbar() {
                 target="_blank"
                 title="Follow us on Instagram"
               >
-                <i className="fab fa-lock" />
+                <i className="tim-icons icon-lock-circle" />
                 <p className="d-lg-none d-xl-none">Login</p>
               </NavLink>
             </NavItem>
