@@ -87,12 +87,12 @@ export default function RegisterPage() {
 
     const current = getUserByUid(user.uid).then((data) => {
       setUserData(data)
+      setShouldAccess(true)
 
-      console.log(data)
-
-      if (data.courseId != undefined) {
-        setShouldAccess(true)
-      }
+      // console.log(data)
+      //
+      // if (data.courseId != undefined) {
+      // }
       setIsLoading(false)
     }).catch((e) => {
       setIsLoading(false)
