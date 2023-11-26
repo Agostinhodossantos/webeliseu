@@ -51,7 +51,7 @@ export default function ModulesPage() {
 
             console.log(data)
 
-            if (data.courseId == 1 || data.courseId == 2 || data.courseId == 3 || data.courseId == 4 ) {
+            if (data.courseId == 1 || data.courseId == 2 || data.courseId == 3 || data.courseId == 4 || data.courseId == 5 ) {
                 setShouldAccess(true)
             }
             setIsLoading(false)
@@ -66,52 +66,58 @@ export default function ModulesPage() {
             <br/> <br/>
             <div className="section section-signup">
 
-                {isLoading == false && shouldAccess ? (
-                    <VideoCourse/>
+                {isLoading ? (
+                    <>Loading</>
                 ): (
                     <>
+                        {shouldAccess ? (
+                            <VideoCourse/>
+                        ): (
+                            <>
 
-                        <Container>
+                                <Container>
 
-                            <Row className="row-grid justify-content-between align-items-center">
-                                <Col className="mb-lg-auto" lg="6">
-                                    <Card className="card-register">
+                                    <Row className="row-grid justify-content-between align-items-center">
+                                        <Col className="mb-lg-auto" lg="6">
+                                            <Card className="card-register">
 
-                                        <CardBody className="p-4">
-                                            <h4 className="">Curso completo</h4>
-                                            <h4 className="">5,198Mt</h4>
+                                                <CardBody className="p-4">
+                                                    <h4 className="">Curso completo</h4>
+                                                    <h4 className="">5,198Mt</h4>
 
-                                            <p className="text-info">Curso completo + Bônus do Curso de Chaveiros </p>
-                                        </CardBody>
-                                        <CardFooter>
-                                            <a href="/register-page/1">
-                                                <Button className="btn-round" color="primary" size="lg">
-                                                    Selecionar
-                                                </Button>
-                                            </a>
-                                        </CardFooter>
-                                    </Card>
-                                </Col>
-                                <Col className="mb-lg-auto" lg="6">
-                                    <Card className="card-register">
+                                                    <p className="text-info">Curso completo + Bônus do Curso de Chaveiros </p>
+                                                </CardBody>
+                                                <CardFooter>
+                                                    <a href="/register-page/1">
+                                                        <Button className="btn-round" color="primary" size="lg">
+                                                            Selecionar
+                                                        </Button>
+                                                    </a>
+                                                </CardFooter>
+                                            </Card>
+                                        </Col>
+                                        <Col className="mb-lg-auto" lg="6">
+                                            <Card className="card-register">
 
-                                        <CardBody className="p-4">
-                                            <h4 className="">Pagamento em Prestações</h4>
-                                            <h4 className="">2,599Mt</h4>
-                                            <p className="text-info">Módulo 01</p>
+                                                <CardBody className="p-4">
+                                                    <h4 className="">Pagamento em Prestações</h4>
+                                                    <h4 className="">2,599Mt</h4>
+                                                    <p className="text-info">Módulo 01</p>
 
-                                        </CardBody>
-                                        <CardFooter>
-                                            <a href="/register-page/2">
-                                                <Button className="btn-round" color="primary" size="lg">
-                                                    Selecionar
-                                                </Button>
-                                            </a>
-                                        </CardFooter>
-                                    </Card>
-                                </Col>
-                            </Row>
-                        </Container>
+                                                </CardBody>
+                                                <CardFooter>
+                                                    <a href="/register-page/2">
+                                                        <Button className="btn-round" color="primary" size="lg">
+                                                            Selecionar
+                                                        </Button>
+                                                    </a>
+                                                </CardFooter>
+                                            </Card>
+                                        </Col>
+                                    </Row>
+                                </Container>
+                            </>
+                        )}
                     </>
                 )}
                 <br/> <br/>
