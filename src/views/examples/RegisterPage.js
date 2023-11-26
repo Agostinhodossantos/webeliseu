@@ -90,7 +90,7 @@ export default function RegisterPage() {
 
       console.log(data)
 
-      if (data.isPaidVideo == true) {
+      if (data.courseId != undefined) {
         setShouldAccess(true)
       }
       setIsLoading(false)

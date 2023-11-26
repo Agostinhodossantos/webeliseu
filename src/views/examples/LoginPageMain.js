@@ -98,6 +98,12 @@ export default function LoginPageMain() {
                                 </h4>
                             </Col>
 
+
+                            <iframe width="660" height="415" src="https://www.youtube.com/embed/g8o4PNef3GI?si=2JYREo_8CKxxBmN2"
+                                    title="YouTube video player" frameBorder="0"
+                                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen></iframe>
+
                             <img alt="..." className="cover-image" src={require("assets/img/square_of.jpeg")} />
                         </Row>
                         <Row className="justify-content-center align-items-center mt-3" >
