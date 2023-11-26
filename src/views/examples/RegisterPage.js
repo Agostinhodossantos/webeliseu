@@ -80,12 +80,12 @@ export default function RegisterPage() {
   }, [id])
 
 
-  useEffect(()=> {
+  useEffect((user)=> {
     if (user == null) {
       return
     }
 
-    const current = getUserByUid(user.uid).then((data) => {
+   getUserByUid(user.uid).then((data) => {
       setUserData(data)
       setShouldAccess(true)
 
