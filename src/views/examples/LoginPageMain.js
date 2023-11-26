@@ -104,7 +104,7 @@ export default function LoginPageMain() {
                                     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowFullScreen></iframe>
 
-                            <img alt="..." className="cover-image" src={require("assets/img/square_of.jpeg")} />
+                            {/*<img alt="..." className="cover-image" src={require("assets/img/square_of.jpeg")} />*/}
                         </Row>
                         <Row className="justify-content-center align-items-center mt-3" >
                             <a href="/modules">
