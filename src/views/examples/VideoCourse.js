@@ -129,6 +129,12 @@ export default function VideoCourse() {
                         {current.courseId == 5 ? (
                             <>
 
+                                <iframe width="660" height="415" src="https://www.youtube.com/embed/MvCacTrHqRI?si=2JYREo_8CKxxBmN2"
+                                        title="YouTube video player" frameBorder="0"
+                                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen></iframe>
+
+
                                 <iframe width="660" height="415" src="https://www.youtube.com/embed/0aUhe2gkLu8?si=0aUhe2gkLu8"
                                         title="YouTube video player" frameBorder="0"
                                         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
